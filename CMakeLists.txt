@@ -108,4 +108,13 @@ if(CATKIN_ENABLE_TESTING)
     ${catkin_LIBRARIES}
     ${MOVEIT_LIB_NAME}
   )
+
+  add_rostest_gtest(${PROJECT_NAME}_test_fanuc_2
+    test/test_fanuc_lrmate200ib.rostest test/test_plugin.cpp
+  )
+  target_link_libraries(${PROJECT_NAME}_test_fanuc_2
+    gtest
+    ${catkin_LIBRARIES}
+    ${MOVEIT_LIB_NAME}
+  )
 endif()
